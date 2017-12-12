@@ -3,7 +3,7 @@ def call(String project) {
     try {
       sh "docker rmi reach/${project}:latest reach/${project}:${currentBuild.displayName} reach/${project}-test"
     } catch (e) {
-      echo "Caught: ${err}"
+      echo "Caught: ${e}"
     }
   }
 }
