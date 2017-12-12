@@ -4,6 +4,8 @@ def call(String repo) {
       usernameVariable: "USER",
       passwordVariable: "PASS"
   )]) {
+      sh "git config user.email 'dev@rea.ch'"
+      sh "git config user.name 'devreach'"
       sh "git tag -a ${currentBuild.displayName} -m '${currentBuild.displayName}'"
       sh "git push https://${USER}:${PASS}@reach-service/${repo} --tags"
   }
