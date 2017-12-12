@@ -4,7 +4,7 @@ def call(String repo) {
       usernameVariable: "USER",
       passwordVariable: "PASS"
   )]) {
-      sh "git tag -a ${currentBuild.displayName} -m ${currentBuild.displayName}"
+      sh "git tag -a ${currentBuild.displayName} -m '${currentBuild.displayName}'"
       sh "git push https://${USER}:${PASS}@reach-service/${repo} --tags"
   }
 }
