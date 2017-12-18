@@ -1,6 +1,5 @@
 def call(filename) {
-  if (fileExists('${filename}') {
-    f = new File('${filename}')
-    file.write "version=${env.BUILD_NUMBER}\n"
-    }
+  if (fileExists("${filename}") {
+    sh "echo version=${env.BUILD_NUMBER} >> ${filename}"
+  }
 }
